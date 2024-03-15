@@ -1,0 +1,31 @@
+/* Estilos para a tabela de usuários */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para a célula com colspan */
+.table td[colspan] {
+  text-align: center;
+}
+
+/* Estilos para a tabela responsiva em telas menores */
+@media (max-width: 768px) {
+  .table {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
