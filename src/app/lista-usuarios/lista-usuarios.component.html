@@ -1,30 +1,61 @@
-<h1>Lista de Usuários</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Email</th>
-        <th scope="col">Telefone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>twitter</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Desafio Indra</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a routerLink="lista-usuarios">Usuários</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="historico-preco">Histórico de Preços</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<h1>Lista de Usuarios</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">senha</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Maria Brown</td>
+      <td>mariabrowngmail.com</td>
+      <td>987809368</td>
+      <td>123456</td>
+      <td><button class="btn btn-secundary">Editar</button></td>
+      <td><button class="btn btn-danger">Deletar</button></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Alex Green</td>
+      <td>alexgreengmail.com</td>
+      <td>947204835</td>
+      <td>123456</td>
+      <td><button class="btn btn-secundary">Editar</button></td>
+      <td><button class="btn btn-danger">Deletar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary">Adicionar Usuário</button>
+
+</div>

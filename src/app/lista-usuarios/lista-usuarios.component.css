@@ -1,31 +1,63 @@
-/* Estilos para a tabela de usuários */
-.table {
-  width: 100%;
-  border-collapse: collapse;
+.container {
+  text-align: center;
   margin-top: 20px;
+}
+
+header{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li a:visited {
+  color: rgb(0, 0, 0);
+}
+
+.table {
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 30px;
 }
 
 .table th,
 .table td {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-.table th {
-  background-color: #f2f2f2;
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Estilos para a célula com colspan */
-.table td[colspan] {
-  text-align: center;
+.btn-primary {
+  background-color: #097ef2e2;
+  color: #fff;
+  margin-top: 30px;
 }
 
-/* Estilos para a tabela responsiva em telas menores */
-@media (max-width: 768px) {
-  .table {
-    overflow-x: auto;
-    display: block;
-  }
+.btn-secundary{
+  background-color: green;
+  color: #fff;
 }
 
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}

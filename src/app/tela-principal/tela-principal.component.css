@@ -2,8 +2,33 @@
   margin-top: 20px;
 }
 
+header{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .navbar-brand {
   font-size: 1.5rem;
+}
+
+.navbar-nav li a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.navbar-nav li a:hover, .navbar-nav li a:visited {
+  color: rgb(0, 0, 0);
+}
+
+.card-header{
+  text-align: center;
+}
+
+.col-md-4 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card {
