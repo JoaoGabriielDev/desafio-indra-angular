@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { TelaPrincipalComponent } from './tela-principal/tela-principal.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { HistoricoPrecosComponent } from './historico-precos/historico-precos.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HistoricoPrecosComponent } from './historico-precos/historico-precos.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

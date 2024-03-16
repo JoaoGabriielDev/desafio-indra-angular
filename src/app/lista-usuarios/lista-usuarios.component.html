@@ -20,42 +20,47 @@
     </nav>
   </header>
 
-<h1>Lista de Usuarios</h1>
+  <div class="container">
+    <h1>Lista de Usuários</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Email</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">Senha</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Maria Brown</td>
-      <td>mariabrowngmail.com</td>
-      <td>987809368</td>
-      <td>123456</td>
-      <td><button class="btn btn-secundary">Editar</button></td>
-      <td><button class="btn btn-danger">Deletar</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Alex Green</td>
-      <td>alexgreengmail.com</td>
-      <td>947204835</td>
-      <td>123456</td>
-      <td><button class="btn btn-secundary">Editar</button></td>
-      <td><button class="btn btn-danger">Deletar</button></td>
-    </tr>
-  </tbody>
-</table>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nome">
+        <input type="text" class="form-control" placeholder="Email">
+        <input type="text" class="form-control" placeholder="Telefone">
+        <input type="text" class="form-control" placeholder="Senha">
+      </div>
 
-<button class="btn btn-primary">Adicionar Usuário</button>
+      <button type="button" class="btn btn-primary"   *ngIf="btnCadastro"  >Cadastrar Novo Usuário</button>
+      <button type="button" class="btn btn-warning"   *ngIf="!btnCadastro" >Editar</button>
+      <button type="button" class="btn btn-danger"    *ngIf="!btnCadastro" >Remover</button>
+      <button type="button" class="btn btn-secondary" *ngIf="!btnCadastro" >Cancelar</button>
+    </form>
+  </div>
+
+  <table class="table">
+    <thead>
+
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Senha</th>
+        <th>Selecionar</th>
+      </tr>
+
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td></td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.telefone}}</td>
+        <td>{{user.senha}}</td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
