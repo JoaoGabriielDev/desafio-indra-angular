@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { User } from '../modelo/User';
 import { UserService } from '../servico/user.service';
 
@@ -7,7 +7,7 @@ import { UserService } from '../servico/user.service';
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.css']
 })
-export class ListaUsuariosComponent implements OnInit{
+export class ListaUsuariosComponent{
 
     btnCadastro:boolean = true;
 
@@ -15,18 +15,12 @@ export class ListaUsuariosComponent implements OnInit{
 
     constructor(private servico:UserService){}
 
-    ngOnInit(): void {
-      this.loadUsers();
+    selecionar():void{
+      this.servico.selecionar()
+      .subscribe(retorno => this.users = retorno);
     }
 
-    loadUsers() {
-      this.servico.getUsers().subscribe(
-        (data: User[]) => {
-          this.users = data;
-        },
-        error => {
-          console.error('Erro ao carregar usuários:', error);
-        }
-      );
-      }
+    ngOnInit(){
+      this.selecionar();
+    }
 }

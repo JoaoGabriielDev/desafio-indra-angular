@@ -12,7 +12,9 @@ export class UserService{
 
   constructor(private http:HttpClient) {}
 
-  getUsers(): Observable<User[]> { // Indicar explicitamente que getUsers() retorna um Observable
-    return this.http.get<User[]>(`${this.url}/`);
+  selecionar():Observable<User[]>{
+    return this.http.get<User[]>(this.url);
   }
+
 }
+
