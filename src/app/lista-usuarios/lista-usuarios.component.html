@@ -20,25 +20,23 @@
     </nav>
   </header>
 
-  <div class="container">
     <h1>Lista de Usuários</h1>
 
     <form>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Nome">
-        <input type="text" class="form-control" placeholder="Email">
-        <input type="text" class="form-control" placeholder="Telefone">
-        <input type="text" class="form-control" placeholder="Senha">
+        <input type="text" class="form-control" placeholder="Nome"     name="nome"     [(ngModel)] = "user.name">
+        <input type="text" class="form-control" placeholder="Email"    name="email"    [(ngModel)] = "user.email">
+        <input type="text" class="form-control" placeholder="Telefone" name="telefone" [(ngModel)] = "user.telefone">
+        <input type="text" class="form-control" placeholder="Senha"    name="senha"    [(ngModel)] = "user.senha">
       </div>
 
-      <button type="button" class="btn btn-primary"   *ngIf="btnCadastro"  >Cadastrar Novo Usuário</button>
-      <button type="button" class="btn btn-warning"   *ngIf="!btnCadastro" >Editar</button>
-      <button type="button" class="btn btn-danger"    *ngIf="!btnCadastro" >Remover</button>
-      <button type="button" class="btn btn-secondary" *ngIf="!btnCadastro" >Cancelar</button>
+      <input type="button" value="Cadastrar novo Usuario" *ngIf="btnCadastro" class="btn btn-primary"   (click) = "cadastrar()">
+      <input type="button" value="Alterar"  *ngIf="!btnCadastro" class="btn btn-warning"                (click) = "editar()">
+      <input type="button" value="Remover"  *ngIf="!btnCadastro" class="btn btn-danger"                 (click) = "delete()">
+      <input type="button" value="Cancelar" *ngIf="!btnCadastro" class="btn btn-secondary"              (click) = "cancelar()">
     </form>
-  </div>
 
-  <table class="table">
+  <table class="table" *ngIf="tabela">
     <thead>
 
       <tr>
@@ -53,13 +51,13 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let user of users">
-        <td></td>
+      <tr *ngFor="let user of users; index as i">
+        <td>{{i+1}}</td>
         <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.telefone}}</td>
         <td>{{user.senha}}</td>
-        <td></td>
+        <td><button class="btn btn-success" (click)="selecionarUsuario(i)">Selecionar</button></td>
       </tr>
     </tbody>
   </table>

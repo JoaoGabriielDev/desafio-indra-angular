@@ -16,5 +16,18 @@ export class UserService{
     return this.http.get<User[]>(this.url);
   }
 
+  cadastrar(obj:User):Observable<User>{
+    return this.http.post<User>(this.url, obj);
+  }
+
+  editar(obj:User):Observable<User>{
+    return this.http.put<User>(this.url, obj);
+  }
+
+  delete(id:number):Observable<void>{
+    return this.http.delete<void>(this.url + '/' + id);
+  }
+
+
 }
 
