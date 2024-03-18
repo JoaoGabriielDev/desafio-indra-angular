@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HistoricoPrecosComponent {
 
+  btnCadastro:boolean = true;
+
+  mostrarTabela: boolean = false;
+
+  mostrarTabelaDeCadastro() {
+    this.mostrarTabela = true;
+  }
+  
 }

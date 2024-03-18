@@ -20,17 +20,35 @@
 </header>
 
 <div>
+
   <h2>Consultar Histórico de Preços de Combustível</h2>
+
   <form class="search-form">
       <label for="distributor">Distribuidor:</label>
       <input type="text" id="distributor" name="distributor">
       <button type="submit" class="btn btn-primary">Pesquisar</button>
   </form>
+  <form>
+    <div class="form-group" *ngIf="mostrarTabela">
+      <input type="text" class="form-control" placeholder="Município">
+      <input type="text" class="form-control" placeholder="Região">
+      <input type="text" class="form-control" placeholder="Bandeira">
+      <input type="text" class="form-control" placeholder="Tipo de Combustível">
+      <input type="text" class="form-control" placeholder="Data de Coleta">
+      <input type="text" class="form-control" placeholder="Valor de Compra">
+      <input type="text" class="form-control" placeholder="Valor de Venda">
+    </div>
+
+    <input type="button" value="Cadastrar novo Distribuidor" *ngIf="btnCadastro" class="btn btn-primary" (click)="mostrarTabelaDeCadastro()" >
+    <input type="button" value="Alterar" *ngIf="!btnCadastro"  class="btn btn-warning">
+    <input type="button" value="Remover"  *ngIf="!btnCadastro" class="btn btn-danger">
+    <input type="button" value="Cancelar" *ngIf="!btnCadastro" class="btn btn-secondary">
+  </form>
   <div>
       <table class="table">
           <thead>
               <tr>
-                  <th>ID</th>
+                  <th></th>
                   <th>Município</th>
                   <th>Região</th>
                   <th>Bandeira</th>
@@ -42,16 +60,15 @@
           </thead>
           <tbody>
               <tr>
-                  <td>1</td>
-                  <td>Joao Pessoa</td>
-                  <td>Nordeste</td>
-                  <td>Shell</td>
-                  <td>Alcool</td>
-                  <td>2023-03-06</td>
-                  <td>2.00</td>
-                  <td>4.00</td>
-                  <td><button class="btn btn-secundary">Editar</button></td>
-                  <td><button class="btn btn-danger">Deletar</button></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><button class="btn btn-success">Selecionar</button></td>
               </tr>
           </tbody>
       </table>
