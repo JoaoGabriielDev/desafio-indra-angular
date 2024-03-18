@@ -29,6 +29,11 @@ header{
   margin: 10px auto;
 }
 
+.table{
+  margin-top: 50px;
+  width: 102%;
+}
+
 .btn {
   border-radius: 4px;
   cursor: pointer;
@@ -36,6 +41,7 @@ header{
 }
 
 .btn-primary {
+  margin-top: 30px;
   background-color: #007bff;
   border-color: #007bff;
 }
@@ -80,39 +86,5 @@ header{
   color: #fff;
 }
 
-.search-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-
-.search-form label {
-  margin-right: 10px;
-}
-
-.search-form input[type="text"] {
-  padding: 8px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  font-size: 16px;
-  width: 200px;
-}
-
-.search-form button {
-  padding: 8px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  margin-top: 3px;
-}
-
-.search-form button:hover {
-  background-color: #0056b3;
-}
 
 

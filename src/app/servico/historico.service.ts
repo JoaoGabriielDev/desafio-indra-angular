@@ -8,17 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class HistoricoService {
 
-  private url: string = 'http://localhost:8080//historicos';
+  private url: string = 'http://localhost:8080/preco-combustivel';
 
   constructor(private http:HttpClient) { }
 
-  getDistribuidorByNome(nome: string): Observable<Historico> {
-    const url = `${this.url}/pesquisar?nome=${nome}`;
-    return this.http.get<Historico>(url);
-  }
-
   selecionar():Observable<Historico[]>{
     return this.http.get<Historico[]>(this.url);
+  }
+
+  cadastrar(obj:Historico):Observable<Historico>{
+    return this.http.post<Historico>(this.url, obj);
+  }
+
+  editar(obj:Historico):Observable<Historico>{
+    return this.http.put<Historico>(this.url, obj);
+  }
+
+  delete(id:number):Observable<void>{
+    return this.http.delete<void>(this.url + '/' + id);
   }
 
 }

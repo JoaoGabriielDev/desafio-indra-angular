@@ -23,37 +23,29 @@
 
   <h2>Consultar Histórico de Preços de Combustível</h2>
 
-  <form class="search-form" (submit)="pesquisarDistribuidor(distributor.value)">
-    <label for="distributor">Distribuidor:</label>
-    <input type="text" id="distributor" name="distributor" #distributor>
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
-  </form>
-
-  <div *ngFor="let h of historicos">
-    <h2>{{ h.distribuidor }}</h2>
-  </div>
-
   <form>
     <div class="form-group" *ngIf="mostrarTabela">
-      <input type="text" class="form-control" placeholder="Município">
-      <input type="text" class="form-control" placeholder="Região">
-      <input type="text" class="form-control" placeholder="Bandeira">
-      <input type="text" class="form-control" placeholder="Tipo de Combustível">
-      <input type="text" class="form-control" placeholder="Data de Coleta">
-      <input type="text" class="form-control" placeholder="Valor de Compra">
-      <input type="text" class="form-control" placeholder="Valor de Venda">
+      <input type="text" class="form-control" placeholder="Distribuidor" name="Distribuidor" [(ngModel)] = "historico.distribuidor">
+      <input type="text" class="form-control" placeholder="Município" name="Município" [(ngModel)] = "historico.municipio">>
+      <input type="text" class="form-control" placeholder="Região" name="Região" [(ngModel)] = "historico.regiao">>
+      <input type="text" class="form-control" placeholder="Bandeira" name="Bandeira" [(ngModel)] = "historico.bandeira">>
+      <input type="text" class="form-control" placeholder="Tipo de Combustível" name="tipoCombustivel" [(ngModel)] = "historico.tipoCombustivel">>
+      <input type="text" class="form-control" placeholder="Data de Coleta" name="dataColeta" [(ngModel)] = "historico.dataColeta">>
+      <input type="text" class="form-control" placeholder="Valor de Compra" name="valorCompra" [(ngModel)] = "historico.valorCompra">>
+      <input type="text" class="form-control" placeholder="Valor de Venda" name="valorVenda" [(ngModel)] = "historico.valorVenda">>
     </div>
 
     <input type="button" value="Cadastrar novo Distribuidor" *ngIf="btnCadastro" class="btn btn-primary" (click)="mostrarTabelaDeCadastro()" >
-    <input type="button" value="Alterar" *ngIf="!btnCadastro"  class="btn btn-warning">
-    <input type="button" value="Remover"  *ngIf="!btnCadastro" class="btn btn-danger">
-    <input type="button" value="Cancelar" *ngIf="!btnCadastro" class="btn btn-secondary">
+    <input type="button" value="Alterar" *ngIf="!btnCadastro"  class="btn btn-warning" (click)="editar()">
+    <input type="button" value="Remover"  *ngIf="!btnCadastro" class="btn btn-danger" (click)="delete()">
+    <input type="button" value="Cancelar" *ngIf="!btnCadastro" class="btn btn-secondary" (click)="cancelar()">
   </form>
   <div>
       <table class="table">
           <thead>
               <tr>
                   <th></th>
+                  <th>Distribuidor</th>
                   <th>Município</th>
                   <th>Região</th>
                   <th>Bandeira</th>
@@ -64,16 +56,17 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td><button class="btn btn-success">Selecionar</button></td>
+              <tr *ngFor="let h of historicos; index as i">
+                  <td>{{i+1}}</td>
+                  <td>{{h.distribuidor}}</td>
+                  <td>{{h.municipio}}</td>
+                  <td>{{h.regiao}}</td>
+                  <td>{{h.bandeira}}</td>
+                  <td>{{h.tipoCombustivel}}</td>
+                  <td>{{h.dataColeta}}</td>
+                  <td>{{h.valorCompra}}</td>
+                  <td>{{h.valorVenda}}</td>
+                  <td><button class="btn btn-success" (click)="selecionarUsuario(i)">Selecionar</button></td>
               </tr>
           </tbody>
       </table>
