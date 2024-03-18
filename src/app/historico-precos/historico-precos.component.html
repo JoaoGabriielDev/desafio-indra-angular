@@ -23,11 +23,16 @@
 
   <h2>Consultar Histórico de Preços de Combustível</h2>
 
-  <form class="search-form">
-      <label for="distributor">Distribuidor:</label>
-      <input type="text" id="distributor" name="distributor">
-      <button type="submit" class="btn btn-primary">Pesquisar</button>
+  <form class="search-form" (submit)="pesquisarDistribuidor(distributor.value)">
+    <label for="distributor">Distribuidor:</label>
+    <input type="text" id="distributor" name="distributor" #distributor>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
   </form>
+
+  <div *ngFor="let h of historicos">
+    <h2>{{ h.distribuidor }}</h2>
+  </div>
+
   <form>
     <div class="form-group" *ngIf="mostrarTabela">
       <input type="text" class="form-control" placeholder="Município">

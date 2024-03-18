@@ -9,12 +9,13 @@ import { HistoricoPrecosComponent } from './historico-precos/historico-precos.co
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     TelaPrincipalComponent,
     ListaUsuariosComponent,
-    HistoricoPrecosComponent
+    HistoricoPrecosComponent,
   ],
   imports: [
     BrowserModule,
