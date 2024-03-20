@@ -29,8 +29,12 @@ export class HistoricoService {
     return this.http.delete<void>(this.url + '/' + id);
   }
 
- obterMediaPrecoPorMunicipio(municipio: string): Observable<number> {
+  obterMediaPrecoPorMunicipio(municipio: string): Observable<number> {
     return this.http.get<number>(`http://localhost:8080/preco-combustivel/media-por-municipio?municipio=${municipio}`);
+  }
+
+  obterPrecosPorRegiao(regiao: string): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:8080/preco-combustivel/por-regiao?regiao=${regiao}`);
   }
 
 }

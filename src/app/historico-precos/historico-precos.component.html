@@ -75,12 +75,39 @@
       </table>
   </div>
 
-  <div>
+  <h2>Obter Média de Preço Por Municipio</h2>
+
+  <div class="form-media">
     <label for="municipio">Município:</label>
-    <input type="text" id="municipio" [(ngModel)]="municipio">
+    <input class="input-media" type="text" id="municipio" [(ngModel)]="municipio">
     <button (click)="obterMediaPrecoPorMunicipio()">Obter Média de Preço</button>
     <p>A média de preço para o município {{ municipio }} é: {{ mediaPreco }}</p>
   </div>
+
+  <h2>Obter Preço Por Região</h2>
+
+  <div class="form-regiao">
+    <label for="regiao">Região:</label>
+    <input class="input-regiao" type="text" id="regiao" [(ngModel)]="regiao">
+    <button (click)="obterPrecosPorRegiao()">Obter Preços por Região</button>
+    <table class="table-regiao" *ngIf="historicosRegiao.length > 0">
+      <thead>
+        <tr>
+          <th>Distribuidor</th>
+          <th>Valor de Venda</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let preco of historicosRegiao">
+          <td>{{ preco.distribuidor }}</td>
+          <td>{{ preco.valorVenda }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Obter Dados Agrupados Por Distribuidora</h2>
+
 </div>
 </div>
 

@@ -22,6 +22,10 @@ throw new Error('Method not implemented.');
   municipio: string = '';
   mediaPreco: number = 0;
 
+  regiao: string = '';
+  precos: any[] = [];
+  historicosRegiao: any[] = [];
+
   constructor(private servico: HistoricoService) { }
 
   selecionar():void{
@@ -110,5 +114,15 @@ throw new Error('Method not implemented.');
       });
   }
 
+  obterPrecosPorRegiao(): void {
+    if (this.regiao) {
+      this.servico.obterPrecosPorRegiao(this.regiao)
+        .subscribe(precos => {
+          this.historicosRegiao = precos;
+        }, error => {
+          console.error('Erro ao obter preços por região:', error);
+        });
+    }
+  }
 }
 
