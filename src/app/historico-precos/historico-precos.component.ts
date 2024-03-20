@@ -1,25 +1,26 @@
 import { Historico } from './../modelo/Historico';
 import { HistoricoService } from './../servico/historico.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-historico-precos',
   templateUrl: './historico-precos.component.html',
   styleUrl: './historico-precos.component.css'
 })
-export class HistoricoPrecosComponent {
+export class HistoricoPrecosComponent implements OnInit{
+consultarDadosPorRegiao: any;
+consultarMediaPrecoCombustivel() {
+throw new Error('Method not implemented.');
+}
 
   historico = new Historico();
 
   btnCadastro:boolean = true;
 
-  mostrarTabela: boolean = false;
-
-  mostrarTabelaDeCadastro() {
-    this.mostrarTabela = true;
-  }
-
   historicos:Historico[] = [];
+
+  municipio: string = '';
+  mediaPreco: number = 0;
 
   constructor(private servico: HistoricoService) { }
 
@@ -28,9 +29,13 @@ export class HistoricoPrecosComponent {
     .subscribe(retorno => this.historicos = retorno);
   }
 
-  ngOnInit(){
-    this.selecionar();
+  selecionarUsuario(posicao:number):void{
+
+    this.historico = this.historicos[posicao];
+
+    this.btnCadastro = false;
   }
+
 
   cadastrar():void{
     this.servico.cadastrar(this.historico)
@@ -40,7 +45,9 @@ export class HistoricoPrecosComponent {
 
       this.historico = new Historico();
 
-      alert('Usuario cadastrado com sucesso!');
+      this.btnCadastro = true;
+
+      alert('Distribuidor cadastrado com sucesso!');
     });
   }
 
@@ -59,7 +66,7 @@ export class HistoricoPrecosComponent {
 
       this.btnCadastro = true;
 
-      alert('Usuario alterado com sucesso!')
+      alert('Distribuidor alterado com sucesso!')
 
     });
   }
@@ -78,7 +85,7 @@ export class HistoricoPrecosComponent {
 
       this.btnCadastro = true;
 
-      alert('Usuario removido com sucesso!')
+      alert('Distribuidor removido com sucesso!')
 
     });
   }
@@ -88,15 +95,20 @@ export class HistoricoPrecosComponent {
     this.historico = new Historico();
 
     this.btnCadastro = true;
-
   }
 
-  selecionarUsuario(posicao:number):void{
-
-    this.historico = this.historicos[posicao];
-
-    this.btnCadastro = false;
-
+  ngOnInit(): void {
+    this.selecionar();
   }
+
+  obterMediaPrecoPorMunicipio(): void {
+    this.servico.obterMediaPrecoPorMunicipio(this.municipio)
+      .subscribe(media => {
+        this.mediaPreco = media;
+      }, error => {
+        console.error('Erro ao obter a média de preço:', error);
+      });
+  }
+
 }
 

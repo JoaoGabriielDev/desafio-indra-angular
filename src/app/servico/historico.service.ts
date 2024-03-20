@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HistoricoService {
+  [x: string]: any;
 
   private url: string = 'http://localhost:8080/preco-combustivel';
 
@@ -26,6 +27,10 @@ export class HistoricoService {
 
   delete(id:number):Observable<void>{
     return this.http.delete<void>(this.url + '/' + id);
+  }
+
+ obterMediaPrecoPorMunicipio(municipio: string): Observable<number> {
+    return this.http.get<number>(`http://localhost:8080/preco-combustivel/media-por-municipio?municipio=${municipio}`);
   }
 
 }

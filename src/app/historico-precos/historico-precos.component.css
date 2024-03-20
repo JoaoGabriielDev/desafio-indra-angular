@@ -31,7 +31,7 @@ header{
 
 .table{
   margin-top: 50px;
-  width: 102%;
+  width: 105%;
 }
 
 .btn {
@@ -74,6 +74,8 @@ header{
 .btn-secondary {
   background-color: #6c757d;
   border-color: #6c757d;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-secondary:hover {
@@ -85,6 +87,48 @@ header{
   background-color: #dc3545;
   color: #fff;
 }
+
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.formulario-metodos {
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+  display: flex; /* Adiciona um display flex para os botões */
+  flex-direction: column; /* Faz com que os botões fiquem um embaixo do outro */
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.btn-mprimary {
+  margin-top: 30px;
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+
+
 
 
 

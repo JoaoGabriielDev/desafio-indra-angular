@@ -24,22 +24,25 @@
   <h2>Consultar Histórico de Preços de Combustível</h2>
 
   <form>
-    <div class="form-group" *ngIf="mostrarTabela">
+
+    <div class="form-group">
       <input type="text" class="form-control" placeholder="Distribuidor" name="Distribuidor" [(ngModel)] = "historico.distribuidor">
-      <input type="text" class="form-control" placeholder="Município" name="Município" [(ngModel)] = "historico.municipio">>
-      <input type="text" class="form-control" placeholder="Região" name="Região" [(ngModel)] = "historico.regiao">>
-      <input type="text" class="form-control" placeholder="Bandeira" name="Bandeira" [(ngModel)] = "historico.bandeira">>
-      <input type="text" class="form-control" placeholder="Tipo de Combustível" name="tipoCombustivel" [(ngModel)] = "historico.tipoCombustivel">>
-      <input type="text" class="form-control" placeholder="Data de Coleta" name="dataColeta" [(ngModel)] = "historico.dataColeta">>
-      <input type="text" class="form-control" placeholder="Valor de Compra" name="valorCompra" [(ngModel)] = "historico.valorCompra">>
-      <input type="text" class="form-control" placeholder="Valor de Venda" name="valorVenda" [(ngModel)] = "historico.valorVenda">>
+      <input type="text" class="form-control" placeholder="Município" name="Município" [(ngModel)] = "historico.municipio">
+      <input type="text" class="form-control" placeholder="Região" name="Região" [(ngModel)] = "historico.regiao">
+      <input type="text" class="form-control" placeholder="Bandeira" name="Bandeira" [(ngModel)] = "historico.bandeira">
+      <input type="text" class="form-control" placeholder="Tipo de Combustível" name="tipoCombustivel" [(ngModel)] = "historico.tipoCombustivel">
+      <input type="text" class="form-control" placeholder="Data de Coleta" name="dataColeta" [(ngModel)] = "historico.dataColeta">
+      <input type="text" class="form-control" placeholder="Valor de Compra" name="valorCompra" [(ngModel)] = "historico.valorCompra">
+      <input type="text" class="form-control" placeholder="Valor de Venda" name="valorVenda" [(ngModel)] = "historico.valorVenda">
     </div>
 
-    <input type="button" value="Cadastrar novo Distribuidor" *ngIf="btnCadastro" class="btn btn-primary" (click)="mostrarTabelaDeCadastro()" >
+    <input type="button" value="Cadastrar novo Distribuidor" *ngIf="btnCadastro" class="btn btn-primary" (click)="cadastrar()" >
     <input type="button" value="Alterar" *ngIf="!btnCadastro"  class="btn btn-warning" (click)="editar()">
     <input type="button" value="Remover"  *ngIf="!btnCadastro" class="btn btn-danger" (click)="delete()">
     <input type="button" value="Cancelar" *ngIf="!btnCadastro" class="btn btn-secondary" (click)="cancelar()">
+
   </form>
+
   <div>
       <table class="table">
           <thead>
@@ -70,6 +73,13 @@
               </tr>
           </tbody>
       </table>
+  </div>
+
+  <div>
+    <label for="municipio">Município:</label>
+    <input type="text" id="municipio" [(ngModel)]="municipio">
+    <button (click)="obterMediaPrecoPorMunicipio()">Obter Média de Preço</button>
+    <p>A média de preço para o município {{ municipio }} é: {{ mediaPreco }}</p>
   </div>
 </div>
 </div>

@@ -7,6 +7,6 @@ export class Historico{
   bandeira:String = '';
   tipoCombustivel:String = '';
   dataColeta: Date = new Date();
-  valorCompra: number = 0; 
+  valorCompra: number = 0;
   valorVenda: number = 0;
 }
