@@ -103,8 +103,8 @@ header{
 .formulario-metodos {
   margin-bottom: 20px;
   margin-bottom: 20px;
-  display: flex; /* Adiciona um display flex para os botões */
-  flex-direction: column; /* Faz com que os botões fiquem um embaixo do outro */
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -147,15 +147,6 @@ label {
   margin: 10px;
 }
 
-button {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
 p {
     margin-top: 10px;
     font-size: 20px;
@@ -195,7 +186,28 @@ p {
   background-color: #f2f2f2;
 }
 
+h1{
+  margin: 20px;
+}
 
+h2{
+  margin-top: 50px;
+}
+
+.btn-metodos{
+  padding: 5px 10px;
+  background-color:  #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.table-distribuidor{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 
 

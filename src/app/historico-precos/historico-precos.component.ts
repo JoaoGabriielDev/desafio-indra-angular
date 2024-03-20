@@ -23,8 +23,11 @@ throw new Error('Method not implemented.');
   mediaPreco: number = 0;
 
   regiao: string = '';
-  precos: any[] = [];
+  precosRegiao: any[] = [];
   historicosRegiao: any[] = [];
+
+  distribuidor: string = '';
+  distribuidores: any[] = [];
 
   constructor(private servico: HistoricoService) { }
 
@@ -103,6 +106,7 @@ throw new Error('Method not implemented.');
 
   ngOnInit(): void {
     this.selecionar();
+    this.obterDistribuidores();
   }
 
   obterMediaPrecoPorMunicipio(): void {
@@ -117,12 +121,24 @@ throw new Error('Method not implemented.');
   obterPrecosPorRegiao(): void {
     if (this.regiao) {
       this.servico.obterPrecosPorRegiao(this.regiao)
-        .subscribe(precos => {
-          this.historicosRegiao = precos;
+        .subscribe(precosRegiao => {
+          this.historicosRegiao = precosRegiao;
         }, error => {
           console.error('Erro ao obter preços por região:', error);
         });
     }
   }
-}
 
+  obterDistribuidores(): void {
+    if (this.distribuidor) {
+      this.servico.getPrecoAgrupadoPorDistribuidor(this.distribuidor)
+        .subscribe(response => {
+          // Converter o objeto em um array de objetos
+          this.distribuidores = Object.entries(response).map(([key, value]) => ({ distribuidor: key, dados: value }));
+        }, error => {
+          console.error('Erro ao obter distribuidores:', error);
+        });
+    }
+  }
+
+}

@@ -21,7 +21,7 @@
 
 <div>
 
-  <h2>Consultar Histórico de Preços de Combustível</h2>
+  <h1>Consultar Histórico de Preços de Combustível</h1>
 
   <form>
 
@@ -80,7 +80,7 @@
   <div class="form-media">
     <label for="municipio">Município:</label>
     <input class="input-media" type="text" id="municipio" [(ngModel)]="municipio">
-    <button (click)="obterMediaPrecoPorMunicipio()">Obter Média de Preço</button>
+    <button class="btn-metodos" (click)="obterMediaPrecoPorMunicipio()">Obter Média de Preço</button>
     <p>A média de preço para o município {{ municipio }} é: {{ mediaPreco }}</p>
   </div>
 
@@ -89,17 +89,17 @@
   <div class="form-regiao">
     <label for="regiao">Região:</label>
     <input class="input-regiao" type="text" id="regiao" [(ngModel)]="regiao">
-    <button (click)="obterPrecosPorRegiao()">Obter Preços por Região</button>
+    <button class="btn-metodos" (click)="obterPrecosPorRegiao()">Obter Preços por Região</button>
     <table class="table-regiao" *ngIf="historicosRegiao.length > 0">
       <thead>
         <tr>
-          <th>Distribuidor</th>
-          <th>Valor de Venda</th>
+          <th>Municipio</th>
+          <th>Preço</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let preco of historicosRegiao">
-          <td>{{ preco.distribuidor }}</td>
+          <td>{{ preco.municipio }}</td>
           <td>{{ preco.valorVenda }}</td>
         </tr>
       </tbody>
@@ -107,8 +107,43 @@
   </div>
 
   <h2>Obter Dados Agrupados Por Distribuidora</h2>
+  <div>
+    <label for="distribuidor">Distribuidor:</label>
+    <input class="input-regiao" type="text" id="distribuidor" [(ngModel)]="distribuidor">
+    <button class="btn-metodos" (click)="obterDistribuidores()">Obter dados Por Distribuidor</button>
+    <table class="table-distribuidor" *ngIf="distribuidores.length > 0">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Distribuidor</th>
+          <th>Município</th>
+          <th>Região</th>
+          <th>Bandeira</th>
+          <th>Tipo de Combustível</th>
+          <th>Data de Coleta</th>
+          <th>Valor de Compra</th>
+          <th>Valor de Venda</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let distribuidor of distribuidores; index as i">
+          <ng-container *ngFor="let dado of distribuidor.dados">
+            <td>{{ i+1 }}</td>
+            <td>{{ dado.distribuidor }}</td>
+            <td>{{ dado.municipio }}</td>
+            <td>{{ dado.regiao }}</td>
+            <td>{{ dado.bandeira }}</td>
+            <td>{{ dado.tipoCombustivel }}</td>
+            <td>{{ dado.dataColeta }}</td>
+            <td>{{ dado.valorCompra }}</td>
+            <td>{{ dado.valorVenda }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
-</div>
+
 
 

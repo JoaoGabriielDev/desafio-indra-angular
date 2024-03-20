@@ -1,13 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Historico } from '../modelo/Historico';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HistoricoService {
-  [x: string]: any;
 
   private url: string = 'http://localhost:8080/preco-combustivel';
 
@@ -37,4 +36,9 @@ export class HistoricoService {
     return this.http.get<any[]>(`http://localhost:8080/preco-combustivel/por-regiao?regiao=${regiao}`);
   }
 
+  getPrecoAgrupadoPorDistribuidor(distribuidor: string): Observable<any[]> {
+    return this.http.get<any[]>(`http://localhost:8080/preco-combustivel/agrupado-por-distribuidor?distribuidor=${distribuidor}`);
+  }
 }
+
+
