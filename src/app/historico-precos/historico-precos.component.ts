@@ -21,6 +21,8 @@ throw new Error('Method not implemented.');
 
   municipio: string = '';
   mediaPreco: number = 0;
+  mediaCompra: number = 0;
+  mediaVenda: number = 0;
 
   regiao: string = '';
   precosRegiao: any[] = [];
@@ -158,4 +160,24 @@ throw new Error('Method not implemented.');
     this.tabelaVisivel = !this.tabelaVisivel;
   }
 
+  obterMediaCompraVendaPorMunicipio(): void {
+    this.servico.obterMediaCompraVendaPorMunicipio(this.municipio)
+      .subscribe(
+        data => {
+          if (data && data.mediaCompra !== undefined && data.mediaVenda !== undefined) {
+            // Atribuir as médias de compra e venda
+            this.mediaCompra = data.mediaCompra;
+            this.mediaVenda = data.mediaVenda;
+          } else {
+            console.log('Dados inválidos recebidos do serviço:', data);
+          }
+        },
+        error => {
+          console.error('Erro ao obter a média de preço:', error);
+        }
+      );
+  }
+
 }
+
+

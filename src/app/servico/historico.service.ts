@@ -43,6 +43,11 @@ export class HistoricoService {
   obterPrecosAgrupadosPorDataColeta(): Observable<Map<string, Historico[]>> {
     return this.http.get<Map<string, Historico[]>>(`http://localhost:8080/preco-combustivel/agrupado-por-data-coleta`);
   }
+
+  obterMediaCompraVendaPorMunicipio(municipio: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/preco-combustivel/media-compra-venda-por-municipio?municipio=${municipio}`);
+  }
+
 }
 
 
