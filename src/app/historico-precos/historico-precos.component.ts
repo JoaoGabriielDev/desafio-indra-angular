@@ -29,6 +29,9 @@ throw new Error('Method not implemented.');
   distribuidor: string = '';
   distribuidores: any[] = [];
 
+  precosAgrupados: Map<string, Historico[]> = new Map();
+  tabelaVisivel: boolean = true;
+
   constructor(private servico: HistoricoService) { }
 
   selecionar():void{
@@ -107,6 +110,7 @@ throw new Error('Method not implemented.');
   ngOnInit(): void {
     this.selecionar();
     this.obterDistribuidores();
+    this.carregarPrecosAgrupados();
   }
 
   obterMediaPrecoPorMunicipio(): void {
@@ -133,12 +137,25 @@ throw new Error('Method not implemented.');
     if (this.distribuidor) {
       this.servico.getPrecoAgrupadoPorDistribuidor(this.distribuidor)
         .subscribe(response => {
-          // Converter o objeto em um array de objetos
           this.distribuidores = Object.entries(response).map(([key, value]) => ({ distribuidor: key, dados: value }));
         }, error => {
           console.error('Erro ao obter distribuidores:', error);
         });
     }
+  }
+
+  carregarPrecosAgrupados() {
+    this.servico.obterPrecosAgrupadosPorDataColeta().subscribe(
+      data => {
+        this.precosAgrupados = data;
+      },
+      error => {
+        console.log('Erro ao carregar os preços agrupados:', error);
+      }
+    );
+  }
+  toggleTable() {
+    this.tabelaVisivel = !this.tabelaVisivel;
   }
 
 }

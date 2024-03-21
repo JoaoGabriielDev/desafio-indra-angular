@@ -143,6 +143,28 @@
     </table>
   </div>
 
+  <h2>Dados agrupados por data da coleta</h2>
+
+  <div class="container">
+    <div></div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Distribuidor</th>
+          <th>Data de Coleta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of precosAgrupados | keyvalue">
+          <td *ngFor="let preco of data.value">{{ preco.id }}</td>
+          <td *ngFor="let preco of data.value">{{ preco.distribuidor }}</td>
+          <td>{{ data.key }}</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 

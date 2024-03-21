@@ -209,6 +209,28 @@ h2{
   margin: 0 auto;
 }
 
+.data-container {
+  margin-top: 10px;
+}
+
+.data-group {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.data-group h3 {
+  margin-top: 0;
+}
+
+.data-item {
+  margin-bottom: 5px;
+}
+
+button {
+  margin-bottom: 10px;
+}
 
 
 
