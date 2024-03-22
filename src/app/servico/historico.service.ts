@@ -48,6 +48,10 @@ export class HistoricoService {
     return this.http.get<any>(`http://localhost:8080/preco-combustivel/media-compra-venda-por-municipio?municipio=${municipio}`);
   }
 
+  obterMediaPrecoPorBandeira(bandeira: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/preco-combustivel/media-por-bandeira?bandeira=${bandeira}`);
+  }
+
 }
 
 

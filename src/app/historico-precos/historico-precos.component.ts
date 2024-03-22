@@ -20,9 +20,12 @@ throw new Error('Method not implemented.');
   historicos:Historico[] = [];
 
   municipio: string = '';
-  mediaPreco: number = 0;
   mediaCompra: number = 0;
   mediaVenda: number = 0;
+
+  mediaPreco: number = 0;
+
+  bandeira: string = '';
 
   regiao: string = '';
   precosRegiao: any[] = [];
@@ -124,6 +127,7 @@ throw new Error('Method not implemented.');
       });
   }
 
+
   obterPrecosPorRegiao(): void {
     if (this.regiao) {
       this.servico.obterPrecosPorRegiao(this.regiao)
@@ -177,6 +181,25 @@ throw new Error('Method not implemented.');
         }
       );
   }
+
+  obterMediaPrecoPorBandeira(): void {
+    this.servico.obterMediaPrecoPorBandeira(this.bandeira)
+    .subscribe(
+      data => {
+        if (data && data.mediaCompra !== undefined && data.mediaVenda !== undefined) {
+          // Atribuir as médias de compra e venda
+          this.mediaCompra = data.mediaCompra;
+          this.mediaVenda = data.mediaVenda;
+        } else {
+          console.log('Dados inválidos recebidos do serviço:', data);
+        }
+      },
+      error => {
+        console.error('Erro ao obter a média de preço:', error);
+      }
+    );
+}
+
 
 }
 

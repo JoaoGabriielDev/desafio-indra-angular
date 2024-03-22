@@ -176,6 +176,16 @@
     <p>A média de preço de venda para o município {{ municipio }} é: {{ mediaVenda }}</p>
   </div>
 
+  <h2>Obter Média de Preço da Compra e Venda Por Bandeira</h2>
+
+  <div class="form-media">
+    <label for="bandeira">Bandeira:</label>
+    <input class="input-media" type="text" id="bandeira" [(ngModel)]="bandeira">
+    <button class="btn-metodos" (click)="obterMediaPrecoPorBandeira()">Obter Média de Preço</button>
+    <p>A média de preço de compra para o município {{ bandeira }} é: {{ mediaCompra }}</p>
+    <p>A média de preço de venda para o município {{ bandeira}} é: {{ mediaVenda }}</p>
+  </div>
+
 </div>
 
 
