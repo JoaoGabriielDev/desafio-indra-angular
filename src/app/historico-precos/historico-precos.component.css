@@ -1,26 +1,70 @@
+body {
+  background-color: #333;
+  color: #ddd;
+}
+
 .container {
   text-align: center;
   margin-top: 20px;
+  background-color: #333;
+}
+
+nav, ul{
+  list-style: none;
+  background-color: #333;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 1.2rem;
+  background-color: #333;
+
+}
+
+.navbar-brand{
+  color: white;
+  background-color: #333;
+}
+
+a:hover{
+  opacity: 1;
+
 }
 
 header{
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #333;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
+header nav{
+  display: flex;
+  padding-right: 790px;
+  background-color: #333;
 }
 
-.navbar-nav li a {
-  text-decoration: none;
-  color: black;
-  margin: 10px;
+header li a{
+  color: white;
 }
 
-.navbar-nav li a:hover {
-  color: rgb(0, 0, 0);
+header li{
+  margin: 0px 15px;
+}
+
+header li:first-child {
+  margin-left: 0;
+}
+
+header li:last-child{
+  margin-right: 0;
 }
 
 .form-control {
@@ -29,9 +73,20 @@ header{
   margin: 10px auto;
 }
 
-.table{
+.table-user {
   margin-top: 50px;
-  width: 105%;
+  width: 98%;
+  margin: 20px;
+}
+
+.table-data{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table-data th,
+.table-data td {
+  padding-right: 30px;
 }
 
 .btn {
@@ -89,7 +144,7 @@ header{
 }
 
 .form-grupo {
-  margin-bottom: 20px;
+  margin-bottom: 200px;
 }
 
 .form-control {
@@ -106,6 +161,7 @@ header{
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #0056b3;
 }
 
 .form-group {
@@ -113,7 +169,7 @@ header{
 }
 
 .form-control {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Margin-bottom original */
 }
 
 .btn-mprimary {
@@ -125,11 +181,12 @@ header{
 
 .container {
   margin-top: 20px;
+  text-align: center;
 }
 
-.form-media{
+.form-media {
   margin-top: 20px;
-  padding: 10px;
+  padding: 10px; /* Padding original */
   border: 1px solid #ccc;
   border-radius: 5px;
 }
@@ -139,41 +196,42 @@ label {
   align-items: center;
 }
 
-.input-media{
+.input-media {
   width: 200px;
-  padding: 5px;
+  padding: 5px; /* Padding original */
   border: 1px solid #ccc;
   border-radius: 3px;
   margin: 10px;
 }
 
 p {
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
-.form-regiao{
+.form-regiao {
   margin-top: 20px;
-  padding: 10px;
+  padding: 10px; /* Padding original */
   border: 1px solid #ccc;
   border-radius: 5px;
-
 }
 
-.input-regiao{
+.input-regiao {
   width: 200px;
-  padding: 5px;
+  padding: 5px; /* Padding original */
   border: 1px solid #ccc;
   border-radius: 3px;
   margin: 10px;
+  background-color: #333;
 }
 
 .table-regiao {
   width: 50%;
   border-collapse: collapse;
   margin-left: 270px;
+  background-color: #333;
 }
 
 .table-regiao th,
@@ -184,26 +242,28 @@ p {
 
 .table-regiao th {
   background-color: #f2f2f2;
+  background-color: #333;
 }
 
-h1{
+h1 {
   margin: 20px;
+
 }
 
-h2{
-  margin-top: 50px;
+h2 {
+  margin-top: 40px;
 }
 
-.btn-metodos{
-  padding: 5px 10px;
-  background-color:  #007bff;
+.btn-metodos {
+  padding: 5px 10px; /* Padding original */
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
-.table-distribuidor{
+.table-distribuidor {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -217,7 +277,7 @@ h2{
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px; /* Padding original */
 }
 
 .data-group h3 {
@@ -231,6 +291,3 @@ h2{
 button {
   margin-bottom: 10px;
 }
-
-
-

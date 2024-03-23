@@ -2,47 +2,51 @@
 
 <div class="container">
   <header>
-    <!-- Barra de navegação -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Desafio Indra</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a routerLink="lista-usuarios">Usuários</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="historico-preco">Histórico de Preços</a>
-          </li>
-        </ul>
-      </div>
+    <a class="navbar-brand" href="#">Desafio Indra</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <nav>
+        <li class="nav-item">
+          <a routerLink="/lista-usuarios">Usuários</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/historico-preco">Histórico de Preços</a>
+        </li>
     </nav>
   </header>
-  <main role="main">
-    <!-- Seções principais do conteúdo -->
-    <div class="row">
-      <div class="col-md-4">
-        <!-- Seção de Resumo de Dados -->
-        <div class="card">
-          <div class="card-header">
-            Resumo de Dados
-          </div>
-          <div class="card-body">
-            <!-- Conteúdo do resumo de dados aqui -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
 
-  <footer class="footer">
-    <!-- Rodapé -->
-    <div class="container">
-      <span class="text-muted">© 2024 - Joao Gabriel Dev. Todos os direitos reservados.</span>
-    </div>
-  </footer>
+  <h1>.</h1>
+  <h1>O Sistema de Gerenciamento de Preços de Combustíveis</h1>
+
+  <p>É um projeto desafiador desenvolvido com as tecnologias Spring Boot no backend e Angular no frontend.
+     Sua missão é oferecer uma solução completa para lidar com dados relacionados aos preços dos combustíveis,
+     facilitando tanto o gerenciamento interno quanto a análise detalhada dessas informações.
+  </p>
+
+  <p>
+    Este sistema permite aos usuários realizar uma série de operações essenciais, começando por uma documentação
+    interativa acessível por meio de uma URI pública, dispensando a necessidade de autenticação. Além disso, é possível
+    realizar operações CRUD (Criar, Ler, Atualizar, Deletar) para gerenciar os usuários da plataforma e registrar o histórico
+    de preços de combustíveis.
+  </p>
+
+  <p>
+    Uma funcionalidade crucial é a importação de dados a partir de arquivos CSV, simplificando a entrada de grandes volumes
+    de informações. Com isso, é possível realizar análises detalhadas, como a média de preço de combustível por município,
+    oferecendo insights valiosos sobre padrões regionais de preço.Outras funcionalidades incluem a consulta de informações por
+    sigla da região, o agrupamento de dados por distribuidora e por data da coleta, além da obtenção do valor médio de compra e
+    venda por município e por bandeira. Essas capacidades permitem uma compreensão profunda do mercado de combustíveis, auxiliando
+    na tomada de decisões estratégicas. No âmbito das entidades do domínio, o sistema abrange aspectos como usuários, histórico
+    de preços de combustíveis, distribuidoras, regiões e bandeiras, garantindo uma representação completa e precisa das informações
+     relevantes para o contexto.
+  </p>
+
+  <p>
+    Em suma, o Sistema de Gerenciamento de Preços de Combustíveis é uma ferramenta essencial para empresas e profissionais que
+    atuam no setor, fornecendo recursos avançados para o gerenciamento eficiente de dados e análises profundas que impulsionam o
+    sucesso no mercado de combustíveis.
+  </p>
+  <hr>
 </div>
 </body>
