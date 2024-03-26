@@ -20,9 +20,11 @@ export class HistoricoService {
     return this.http.post<Historico>(this.url, obj);
   }
 
-  editar(obj:Historico):Observable<Historico>{
-    return this.http.put<Historico>(this.url, obj);
+  editar(obj: Historico): Observable<Historico> {
+    const url = `${this.url}/${obj.id}`;
+    return this.http.put<Historico>(url, obj);
   }
+
 
   delete(id:number):Observable<void>{
     return this.http.delete<void>(this.url + '/' + id);

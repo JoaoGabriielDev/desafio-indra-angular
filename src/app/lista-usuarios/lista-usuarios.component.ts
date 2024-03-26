@@ -40,27 +40,25 @@ export class ListaUsuariosComponent{
       });
     }
 
-    editar():void{
-
+    editar(): void {
       this.servico.editar(this.user)
-      .subscribe(retorno => {
-
-        let posicao = this.users.findIndex(obj => {
-          return obj.id == retorno.id;
+        .subscribe(retorno => {
+          const posicao = this.users.findIndex(obj => obj.id === retorno.id);
+          if (posicao !== -1) {
+            this.users[posicao] = retorno;
+            this.user = new User();
+            this.btnCadastro = true;
+            this.tabela = true;
+            alert('Usuário alterado com sucesso!');
+          } else {
+            alert('Usuário não encontrado para edição!');
+          }
+        }, error => {
+          console.error('Erro ao editar usuário:', error);
+          alert('Erro ao editar usuário. Verifique o console para mais detalhes.');
         });
-
-        this.users[posicao] = retorno;
-
-        this.user = new User();
-
-        this.btnCadastro = true;
-
-        this.tabela = true;
-
-        alert('Usuario alterado com sucesso!')
-
-      });
     }
+
 
     delete():void{
       this.servico.delete(this.user.id)

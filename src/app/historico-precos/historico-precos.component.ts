@@ -23,6 +23,13 @@ throw new Error('Method not implemented.');
   mediaCompra: number = 0;
   mediaVenda: number = 0;
 
+  mediaCompraMunicipio: number = 0;
+  mediaVendaMunicipio: number = 0;
+
+// Variáveis para armazenar as médias de compra e venda por bandeira
+  mediaCompraBandeira: number = 0;
+  mediaVendaBandeira: number = 0;
+
   mediaPreco: number = 0;
 
   bandeira: string = '';
@@ -169,9 +176,9 @@ throw new Error('Method not implemented.');
       .subscribe(
         data => {
           if (data && data.mediaCompra !== undefined && data.mediaVenda !== undefined) {
-            // Atribuir as médias de compra e venda
-            this.mediaCompra = data.mediaCompra;
-            this.mediaVenda = data.mediaVenda;
+            // Atribuir as médias de compra e venda específicas para o município
+            this.mediaCompraMunicipio = data.mediaCompra;
+            this.mediaVendaMunicipio = data.mediaVenda;
           } else {
             console.log('Dados inválidos recebidos do serviço:', data);
           }
@@ -184,21 +191,21 @@ throw new Error('Method not implemented.');
 
   obterMediaPrecoPorBandeira(): void {
     this.servico.obterMediaPrecoPorBandeira(this.bandeira)
-    .subscribe(
-      data => {
-        if (data && data.mediaCompra !== undefined && data.mediaVenda !== undefined) {
-          // Atribuir as médias de compra e venda
-          this.mediaCompra = data.mediaCompra;
-          this.mediaVenda = data.mediaVenda;
-        } else {
-          console.log('Dados inválidos recebidos do serviço:', data);
+      .subscribe(
+        data => {
+          if (data && data.mediaCompra !== undefined && data.mediaVenda !== undefined) {
+            // Atribuir as médias de compra e venda específicas para a bandeira
+            this.mediaCompraBandeira = data.mediaCompra;
+            this.mediaVendaBandeira = data.mediaVenda;
+          } else {
+            console.log('Dados inválidos recebidos do serviço:', data);
+          }
+        },
+        error => {
+          console.error('Erro ao obter a média de preço:', error);
         }
-      },
-      error => {
-        console.error('Erro ao obter a média de preço:', error);
-      }
-    );
-}
+      );
+  }
 
 
 }

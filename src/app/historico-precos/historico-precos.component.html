@@ -167,23 +167,32 @@
 
   <h2>Obter Média de Preço da Compra e Venda Por Município</h2>
 
-  <div class="form-media">
-    <label for="municipio">Município:</label>
-    <input class="input-media" type="text" id="municipio" [(ngModel)]="municipio">
-    <button class="btn-metodos" (click)="obterMediaCompraVendaPorMunicipio()">Obter Média de Preço</button>
-    <p>A média de preço de compra para o município {{ municipio }} é: {{ mediaCompra }}</p>
-    <p>A média de preço de venda para o município {{ municipio }} é: {{ mediaVenda }}</p>
-  </div>
+<div class="form-media">
+  <label for="municipio">Município:</label>
+  <input class="input-media" type="text" id="municipio" [(ngModel)]="municipio">
+  <button class="btn-metodos" (click)="obterMediaCompraVendaPorMunicipio()">Obter Média de Preço</button>
+  <p *ngIf="mediaCompraMunicipio !== undefined && mediaVendaMunicipio !== undefined">
+    A média de preço de compra para o município {{ municipio }} é: {{ mediaCompraMunicipio }}
+  </p>
+  <p *ngIf="mediaCompraMunicipio !== undefined && mediaVendaMunicipio !== undefined">
+    A média de preço de venda para o município {{ municipio }} é: {{ mediaVendaMunicipio }}
+  </p>
+</div>
 
-  <h2>Obter Média de Preço da Compra e Venda Por Bandeira</h2>
+<h2>Obter Média de Preço da Compra e Venda Por Bandeira</h2>
 
-  <div class="form-media">
-    <label for="bandeira">Bandeira:</label>
-    <input class="input-media" type="text" id="bandeira" [(ngModel)]="bandeira">
-    <button class="btn-metodos" (click)="obterMediaPrecoPorBandeira()">Obter Média de Preço</button>
-    <p>A média de preço de compra para o município {{ bandeira }} é: {{ mediaCompra }}</p>
-    <p>A média de preço de venda para o município {{ bandeira}} é: {{ mediaVenda }}</p>
-  </div>
+<div class="form-media">
+  <label for="bandeira">Bandeira:</label>
+  <input class="input-media" type="text" id="bandeira" [(ngModel)]="bandeira">
+  <button class="btn-metodos" (click)="obterMediaPrecoPorBandeira()">Obter Média de Preço</button>
+  <p *ngIf="mediaCompraBandeira !== undefined && mediaVendaBandeira !== undefined">
+    A média de preço de compra para a bandeira {{ bandeira }} é: {{ mediaCompraBandeira }}
+  </p>
+  <p *ngIf="mediaCompraBandeira !== undefined && mediaVendaBandeira !== undefined">
+    A média de preço de venda para a bandeira {{ bandeira }} é: {{ mediaVendaBandeira }}
+  </p>
+</div>
+
 
 </div>
 </body>
