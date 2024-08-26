@@ -1,27 +1,31 @@
-# Desafiofront
+Sistema de Gerenciamento de Preços de Combustíveis
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+Descrição do Projeto
 
-## Development server
+O Sistema de Gerenciamento de Preços de Combustíveis é uma solução robusta e eficiente, desenvolvida para facilitar o gerenciamento e a análise de dados relacionados aos preços de combustíveis. Este sistema foi criado utilizando Spring Boot no backend e Angular no frontend, com MySQL como banco de dados, para oferecer uma plataforma completa e integrada para empresas e profissionais do setor de combustíveis.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Funcionalidades Principais
 
-## Code scaffolding
+Documentação Interativa: Acesso a uma documentação pública, disponível sem autenticação, para facilitar a compreensão e o uso da API. Operações CRUD: Gerenciamento completo de usuários e histórico de preços de combustíveis, permitindo criar, ler, atualizar e deletar dados com facilidade. Importação de Dados via CSV: Simplifica a entrada de grandes volumes de informações, agilizando o processo de gerenciamento de dados. Análise de Dados: Cálculo da média de preços de combustíveis por município, fornecendo insights detalhados sobre os padrões de preços regionais. Consultas Avançadas: Possibilidade de realizar consultas por sigla da região, agrupamento de dados por distribuidora e por data da coleta, além de obter o valor médio de compra e venda por município e por bandeira.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Entidades do Domínio
 
-## Build
+Usuários: Gerenciamento de contas de usuário que interagem com o sistema. Histórico de Preços de Combustíveis: Registro detalhado dos preços de compra e venda de combustíveis ao longo do tempo. Distribuidoras: Informações sobre as empresas que distribuem combustíveis. Regiões: Representação geográfica que permite consultas e análises baseadas em localização. Bandeiras: Classificação das marcas de combustíveis que facilitam a análise de mercado.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Tecnologias Utilizadas
 
-## Running unit tests
+Backend: Java 17 Spring Boot MySQL
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Frontend: Angular 18 HTML5 & CSS3 TypeScript
 
-## Running end-to-end tests
+Como Rodar o Projeto?
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Pré-requisitos: Java 17 ou superior instalado Node.js e npm instalados (para o frontend) MySQL configurado
 
-## Further help
+Instruções: Clone este repositório. Navegue até o diretório do backend e configure o banco de dados MySQL no arquivo application.properties. Execute o comando mvn spring-boot:run para iniciar o servidor backend. Navegue até o diretório do frontend e execute npm install para instalar as dependências. Execute ng serve para rodar a aplicação Angular. Acesse o sistema através do navegador em http://localhost:4200.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Contribuições
+
+Contribuições são bem-vindas! Se você tem sugestões, melhorias ou correções, sinta-se à vontade para abrir uma issue ou submeter um pull request.
+
+Licença Este projeto está licenciado sob a Licença MIT.
